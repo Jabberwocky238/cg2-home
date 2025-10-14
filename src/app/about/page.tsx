@@ -3,7 +3,7 @@
 import { useTexts } from "../../hooks/useTexts";
 
 export default function AboutPage() {
-  const t = useTexts();
+  const { t } = useTexts();
   return (
     <main className="max-w-5xl mx-auto px-6 py-12 space-y-10">
       <section className="space-y-3">

@@ -34,12 +34,7 @@ export default function Home() {
             title={t.memorialName}
             href="/memorial"
             action={
-              <>
-                <Link href="/memorial"> {t.viewDetails} </Link>
-                {t.memorialDomain ? (
-                  <Link href={t.memorialDomain} target="_blank" rel="noopener noreferrer"> {t.visitSite} </Link>
-                ) : null}
-              </>
+              <Link href="/memorial"> {t.viewDetails} </Link>
             }
           >
             {t.memorialDesc}
@@ -49,12 +44,7 @@ export default function Home() {
             title={t.cloudName}
             href="/cloud"
             action={
-              <>
-                <Link href="/cloud"> {t.viewDetails} </Link>
-                {t.cloudDomain ? (
-                  <Link href={t.cloudDomain} target="_blank" rel="noopener noreferrer"> {t.visitSite} </Link>
-                ) : null}
-              </>
+              <Link href="/cloud"> {t.viewDetails} </Link>
             }
           >
             {t.cloudDesc}
