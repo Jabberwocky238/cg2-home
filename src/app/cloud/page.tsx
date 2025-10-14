@@ -6,9 +6,9 @@ import Image from "next/image";
 import { Button } from "@/components/tremor/Button";
 
 export default function CloudPage() {
-  const t = useTexts();
+  const { t } = useTexts();
   return (
-    <main className="max-w-5xl mx-auto px-6 py-12 min-h-screen">
+    <main className="max-w-5xl mx-auto px-6 py-12">
       {/* 统一视图：根据媒体查询切换布局与样式，复用同一套 DOM */}
       <section
         className="grid md:grid-cols-2 sm:grid-cols-1 gap-8 items-center"
@@ -21,7 +21,7 @@ export default function CloudPage() {
           <p className="mb-6">{t.cloudP3}</p>
           <div className="flex gap-3">
             <Button variant="ghost" className="bg-white/10" asChild>
-              <Link href={t.cloudDomain} target="_blank" rel="noopener noreferrer">{t.cloudName}  </Link>
+              <Link href="https://cloud.permane.world" target="_blank" rel="noopener noreferrer">{t.cloudName}  </Link>
             </Button>
           </div>
         </div>

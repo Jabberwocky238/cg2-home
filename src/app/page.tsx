@@ -8,7 +8,7 @@ import { Button } from "@/components/tremor/Button";
 import Threads from "@/components/reactbits/Threads";
 
 export default function Home() {
-  const t = useTexts();
+  const { t } = useTexts();
   return (
     <Overlay>
       <section className="relative min-h-screen 

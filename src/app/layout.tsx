@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AppBar from "../components/AppBar";
 import Footer from "../components/Footer";
-import { texts } from "../lib/i18n/texts";
+import { I18nProvider } from "../hooks/useTexts";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: texts.appName,
-  description: texts.heroSubtitle,
+  title: "Permane.world",
+  description: "Permane.world",
 };
 
 export default function RootLayout({
@@ -26,13 +26,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN">
+    <html>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <AppBar />
-        {children}
-        <Footer />
+        <I18nProvider>
+          <AppBar />
+          {children}
+          <Footer />
+        </I18nProvider>
       </body>
     </html>
   );

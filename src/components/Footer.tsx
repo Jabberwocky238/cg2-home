@@ -4,9 +4,9 @@ import { useState } from "react";
 import { useTexts } from "../hooks/useTexts";
 import { Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from "./tremor/Drawer";
 
-import { misc } from "../lib/i18n/misc";
 import Link from "next/link";
 import { RiGithubFill, RiYoutubeFill, RiBilibiliFill, RiTwitterXFill } from "@remixicon/react";
+import { APPNAME, COPYRIGHT } from "@/lib/i18n/texts";
 
 function FooterItem({ title, body }: { title: string; body: ReadonlyArray<string> }) {
   const [open, setOpen] = useState(false);
@@ -32,7 +32,7 @@ function FooterItem({ title, body }: { title: string; body: ReadonlyArray<string
 }
 
 export default function Footer() {
-  const t = useTexts();
+  const { t } = useTexts();
   return (
     <footer className="w-full border-t 
     bg-background/30 backdrop-blur 
@@ -41,8 +41,8 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
         {/* 第一列：版权、公司名与社交链接 */}
         <div className="space-y-3">
-          <div className="text-sm">{t.footerCopyright}</div>
-          <div className="text-base font-semibold">{t.appName}</div>
+          <div className="text-sm">{COPYRIGHT}</div>
+          <div className="text-base font-semibold">{APPNAME}</div>
           <div className="flex items-center gap-3">
             <Link href="#" aria-label="X" className="hover:opacity-90"><RiTwitterXFill className="size-5" /></Link>
             <Link href="#" aria-label="GitHub" className="hover:opacity-90"><RiGithubFill className="size-5" /></Link>
@@ -53,22 +53,22 @@ export default function Footer() {
 
         {/* 第二列：服务内容链接 */}
         <div className="space-y-3">
-          <div className="text-base font-semibold">服务</div>
+          <div className="text-base font-semibold">{t.sectionProducts}</div>
           <div className="flex flex-col gap-2">
             <Link href="/memorial">{t.memorialName}</Link>
             <Link href="/cloud">{t.cloudName}</Link>
-            <Link href="/apply">联系我们</Link>
-            <Link href="/about">我们是谁</Link>
+            <Link href="/apply">{t.navApply}</Link>
+            <Link href="/about">{t.aboutTitle}</Link>
           </div>
         </div>
 
         {/* 第三列：抽屉项 */}
         <div className="space-y-3">
-          <div className="text-base font-semibold">了解更多</div>
+          <div className="text-base font-semibold">{t.sectionProducts}</div>
           <div className="flex flex-col gap-2">
-            <FooterItem title={misc.termsTitle} body={misc.termsBody} />
-            <FooterItem title={misc.privacyTitle} body={misc.privacyBody} />
-            <FooterItem title={misc.howItWorksTitle} body={misc.howItWorksBody} />
+            <FooterItem title={t.termsTitle} body={t.termsBody} />
+            <FooterItem title={t.privacyTitle} body={t.privacyBody} />
+            <FooterItem title={t.howItWorksTitle} body={t.howItWorksBody} />
           </div>
         </div>
       </div>

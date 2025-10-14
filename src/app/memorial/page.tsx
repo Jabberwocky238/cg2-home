@@ -38,7 +38,7 @@ const items = [
 
 
 export default function MemorialPage() {
-  const t = useTexts();
+  const { t } = useTexts();
   return (
     <main className="max-w-5xl mx-auto px-6 py-12 min-h-screen">
       {/* 统一视图：根据媒体查询切换布局与样式，复用同一套 DOM */}
@@ -50,7 +50,9 @@ export default function MemorialPage() {
       </div>
       
       <section
-        className="grid md:grid-cols-2 sm:grid-cols-1 gap-8 items-center"
+        className="grid md:grid-cols-2 sm:grid-cols-1 
+        bg-background/70 backdrop-blur p-8 rounded-xl
+        gap-8 items-center"
       >
         {/* 文案容器：移动端在下，桌面端在左 */}
         <div className="order-1 p-4">
@@ -60,7 +62,7 @@ export default function MemorialPage() {
           <p className="mb-6">{t.memorialP3}</p>
           <div className="flex gap-3">
             <Button variant="ghost" className="bg-white/10" asChild>
-              <Link href={t.memorialDomain} target="_blank" rel="noopener noreferrer">{t.memorialName}</Link>
+              <Link href="https://memorial.permane.world" target="_blank" rel="noopener noreferrer">{t.memorialName}</Link>
             </Button>
           </div>
         </div>

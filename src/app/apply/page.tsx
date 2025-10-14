@@ -7,7 +7,7 @@ import { Textarea } from "../../components/tremor/TextArea";
 import { useTexts } from "../../hooks/useTexts";
 
 export default function ApplyPage() {
-  const t = useTexts();
+  const { t } = useTexts();
   return (
     <main className="max-w-2xl mx-auto px-6 py-12">
       <h1 className="text-3xl font-bold mb-6">{t.heroApply}</h1>
